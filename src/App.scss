@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import '~antd/dist/antd.css';
+
+.App {
+  background-color: #1E1E1E;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  .spinner {
+    color: white;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .header {
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    font-size: 25px;
+    justify-content: space-between;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+
+    a {
+      color: white
+    }
+
+    .left {
+      align-self: flex-start;
+      justify-content: flex-start;
+    }
+
+    .right {
+      align-self: flex-end;
+      justify-content: flex-end;
+    }
+  }
+}

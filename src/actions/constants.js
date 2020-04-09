@@ -1,0 +1,4 @@
+export const UPDATE_USER = 'UPDATE_USER';
+export const UPDATE_STREAK = 'UPDATE_STREAK';
+export const NO_DATA_STREAK = 'NO_DATA_STREAK';
+export const DESTROY_STATE = 'DESTROY_STATE';

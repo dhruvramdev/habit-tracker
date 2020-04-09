@@ -1,0 +1,45 @@
+.brain-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 100%;
+
+  .day-count {
+    margin: -30px auto auto;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  @media (min-width: 700px) {
+    .day-count {
+      margin-top: -50px;
+    }
+  }
+
+  svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+$columns: 90;
+@mixin animate-list {
+  @for $i from 1 through $columns {
+    .animate-#{$i} {
+      animation: fadein #{$i*50}ms;
+    }
+  }
+}
+
+@include animate-list;

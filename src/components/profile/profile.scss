@@ -1,0 +1,66 @@
+.profile {
+  max-width: 600px;
+  width: 90vw;
+  margin: 150px auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-weight: 500;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+
+  .page-name {
+    margin-top: 30px;
+    font-size: 25px;
+  }
+
+  .fields {
+    margin-top: 20px;
+
+    & > div {
+      height: 40px;
+      margin: auto;
+    }
+
+    .form {
+      display: flex;
+      max-width: 250px;
+
+      button {
+        width: 75px;
+        margin-left: 10px;
+        height: 35px;
+        font-size: 14px;
+        text-align: center;
+        background-color: transparent;
+        border: solid 1px white;
+      }
+
+      input {
+        height: 35px;
+        color: white;
+        text-align: center;
+        background-color: transparent;
+        border: solid 1px white;
+      }
+
+      .ant-picker {
+        background: transparent;
+        height: 35px;
+
+        input {
+          border: none;
+          height: unset;
+        }
+
+        &-clear {
+          background: transparent;
+        }
+      }
+    }
+
+    font-size: 20px;
+  }
+
+}

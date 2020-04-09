@@ -1,0 +1,60 @@
+.auth-form {
+  max-width: 400px;
+  width: 90vw;
+  margin: auto;
+  //border: solid 1px white;
+
+  .footer {
+    font-size: 14px;
+    color: white;
+
+    a {
+      margin-left: 3px;
+    }
+  }
+
+
+  label {
+    color: white;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+  }
+
+  .ant-form-item-has-error .ant-input:hover, .ant-form-item-has-error .ant-input {
+    background-color: transparent;
+  }
+
+  .ant-form-item-control {
+    input {
+      background-color: black !important;
+      color: white !important;
+      border: solid 1px white;
+      height: 40px;
+    }
+
+    .ant-input-affix-wrapper {
+      background-color: transparent;
+      color: white;
+      border: solid 1px white;
+      height: 40px;
+
+      input {
+        border: none;
+        height: 100%;
+      }
+
+      span {
+        color: white;
+        line-height: 30px;
+      }
+    }
+
+    button {
+      background-color: transparent;
+      height: 40px;
+      border: solid 1px white;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
