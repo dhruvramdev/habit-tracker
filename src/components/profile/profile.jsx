@@ -36,6 +36,7 @@ class Profile extends Component {
         console.log(this.state.displayName);
         if (!this.state.displayName) {
             message.error("No Name Entered");
+            return;
         }
         try {
             const data = await this.props.auth.user.updateProfile({

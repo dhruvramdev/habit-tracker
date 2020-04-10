@@ -6,6 +6,7 @@ export function loginWithFirebase(email, password) {
         try {
             const data = await firebase.auth().signInWithEmailAndPassword(email, password);
             console.log(data);
+            firebase.analytics().logEvent("login");
             dispatch(updateUser(data.user));
         } catch (err) {
             console.log(err);
@@ -19,6 +20,7 @@ export function registerWithFirebase(email, password) {
         try {
             const data = await firebase.auth().createUserWithEmailAndPassword(email, password);
             console.log(data);
+            firebase.analytics().logEvent("sign_up");
             dispatch(updateUser(data.user));
         } catch (err) {
             console.log(err);

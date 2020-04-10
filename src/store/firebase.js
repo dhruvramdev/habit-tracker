@@ -15,6 +15,8 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 // firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL).then(() => {
 //     console.log("Persistence Done");
 // }).catch(err => {

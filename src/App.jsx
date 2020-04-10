@@ -11,6 +11,9 @@ import Header from "./components/header/header";
 import {Spin} from "antd";
 import {LoadingOutlined} from '@ant-design/icons';
 import Profile from "./components/profile/profile";
+import {getPalette} from "./actions/palette";
+import Settings from "./components/settings/settings";
+import Intro from "./components/intro/intro";
 
 const antIcon = <LoadingOutlined style={{fontSize: 24}} spin/>;
 
@@ -27,10 +30,13 @@ class App extends React.Component {
                 console.log("User Found");
                 console.log(user);
                 this.props.setUser(user);
+                if (!this.props.palette.synced) {
+                    this.props.getPalette();
+                }
                 this.props.history.push(this.state.pathname);
             } else {
                 console.log("User Not Found");
-                this.props.history.push('/login');
+                this.props.history.push('/intro');
             }
             this.setState({loading: false});
         });
@@ -58,6 +64,12 @@ class App extends React.Component {
                     <Route path={'/profile'}>
                         <Profile/>
                     </Route>
+                    <Route path={'/settings'}>
+                        <Settings/>
+                    </Route>
+                    <Route path={'/intro'}>
+                        <Intro/>
+                    </Route>
                     <Route path={'/'}>
                         <Home/>
                     </Route>
@@ -70,10 +82,12 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        auth: state.auth
+        auth: state.auth,
+        palette: state.palette,
     };
 };
 
 export default connect(mapStateToProps, {
-    setUser
+    setUser,
+    getPalette
 })(withRouter(App));

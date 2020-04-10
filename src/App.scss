@@ -1,6 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 @import '~antd/dist/antd.css';
 
+$background-color: #1E1E1E;
+
+
+.bootstrap-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto
+}
+
+@media (min-width: 576px) {
+  .bootstrap-container {
+    max-width:540px
+  }
+}
+
+@media (min-width: 768px) {
+  .bootstrap-container {
+    max-width:720px
+  }
+}
+
+@media (min-width: 992px) {
+  .bootstrap-container {
+    max-width:960px
+  }
+}
+
+@media (min-width: 1200px) {
+  .bootstrap-container {
+    max-width:1140px
+  }
+}
+
 .App {
   background-color: #1E1E1E;
   min-height: 100vh;
@@ -12,29 +47,5 @@
     color: white;
     width: fit-content;
     margin: auto;
-  }
-
-  .header {
-    padding: 10px 20px;
-    color: white;
-    display: flex;
-    font-size: 25px;
-    justify-content: space-between;
-    font-weight: 500;
-    font-family: 'Oswald', sans-serif;
-
-    a {
-      color: white
-    }
-
-    .left {
-      align-self: flex-start;
-      justify-content: flex-start;
-    }
-
-    .right {
-      align-self: flex-end;
-      justify-content: flex-end;
-    }
   }
 }

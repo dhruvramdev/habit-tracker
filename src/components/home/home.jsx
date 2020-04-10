@@ -12,7 +12,7 @@ const antIcon = <LoadingOutlined style={{fontSize: 24}} spin/>;
 class Home extends Component {
     componentDidMount() {
         if (!this.props.auth.loggedIn) {
-            this.props.history.push('/login');
+            this.props.history.push('/intro');
         } else {
             if (!this.props.streak.fetched) {
                 this.props.getStreak();

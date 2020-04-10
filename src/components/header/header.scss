@@ -1,0 +1,23 @@
+.header {
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  font-size: 25px;
+  justify-content: space-between;
+  font-weight: 500;
+  font-family: 'Oswald', sans-serif;
+
+  a {
+    color: white
+  }
+
+  .left {
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
+
+  .right {
+    align-self: flex-end;
+    justify-content: flex-end;
+  }
+}

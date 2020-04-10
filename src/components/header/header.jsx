@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {connect} from "react-redux";
 import './header.scss';
 import {Link} from "react-router-dom";
-import {LogoutOutlined, UserOutlined} from "@ant-design/icons";
+import {LogoutOutlined, SettingOutlined, UserOutlined} from "@ant-design/icons";
 import firebase from "../../store/firebase";
 import {message} from "antd";
 import {resetStore} from "../../actions/common";
@@ -27,7 +27,7 @@ class Header extends Component {
     render() {
         const {loggedIn, user} = this.props.auth;
         return (
-            <div className='header'>
+            <div className='bootstrap-container header'>
                 <div className='left'>
                     <Link to={'/'}>
                         UNFUCK YOURSELF
@@ -38,6 +38,9 @@ class Header extends Component {
                         <Fragment>
                             <Link to={'/profile'}>
                                 <UserOutlined/>
+                            </Link>
+                            <Link to={'/settings'} style={{marginLeft: 10}}>
+                                <SettingOutlined/>
                             </Link>
                             <LogoutOutlined onClick={this.logout} style={{marginLeft: 10}}/>
                         </Fragment>

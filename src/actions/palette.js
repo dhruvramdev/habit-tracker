@@ -1,22 +1,21 @@
 import firebase from "../store/firebase";
-
-import {NO_DATA_STREAK, UPDATE_STREAK} from "./constants";
+import {NO_DATA_PALETTE, UPDATE_PALETTE} from "./constants";
 
 const db = firebase.firestore();
-const streakCollection = db.collection('streak');
+const paletteCollection = db.collection('palette');
 
-export function getStreak() {
+export function getPalette() {
     return async (dispatch, getState) => {
         try {
             const reduxState = getState();
             const userUID = reduxState.auth.user.uid;
-            const doc = await streakCollection.doc(userUID).get();
+            const doc = await paletteCollection.doc(userUID).get();
             console.log(doc);
             if (doc.exists) {
                 console.log("Document data:", doc.data());
-                dispatch(updateStreak(doc.data()));
+                dispatch(updatePalette(doc.data()));
             } else {
-                dispatch(noStreakData());
+                dispatch(noPalette());
                 console.log("No such document!");
             }
         } catch (err) {
@@ -26,17 +25,17 @@ export function getStreak() {
     };
 }
 
-export function setStreak(startDate) {
+export function setPalette(colors) {
     return async (dispatch, getState) => {
         try {
             const reduxState = getState();
             const userUID = reduxState.auth.user.uid;
             const dd = {
-                startDate: firebase.firestore.Timestamp.fromDate(startDate.toDate())
+                colors
             };
-            await streakCollection.doc(userUID).set(dd);
-            firebase.analytics().logEvent('set_streak');
-            dispatch(updateStreak(dd));
+            await paletteCollection.doc(userUID).set(dd);
+            firebase.analytics().logEvent('set_palette');
+            dispatch(updatePalette(dd));
         } catch (err) {
             console.log(err);
             throw err;
@@ -44,16 +43,16 @@ export function setStreak(startDate) {
     };
 }
 
-export function updateStreak(userData) {
+export function updatePalette(paletteData) {
     return {
-        type: UPDATE_STREAK,
-        payload: userData
+        type: UPDATE_PALETTE,
+        payload: paletteData
     };
 }
 
-export function noStreakData() {
+export function noPalette() {
     return {
-        type: NO_DATA_STREAK,
+        type: NO_DATA_PALETTE
     };
 }
 

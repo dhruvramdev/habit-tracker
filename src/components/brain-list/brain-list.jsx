@@ -9,7 +9,7 @@ class BrainList extends Component {
         for (let i = 0; i < noOfBrains; i++) {
             brainList.push(
                 <div key={`full_${i}`} className='brain-list-child'>
-                    <Brain filled={90}/>
+                    <Brain animate={false} filled={90}/>
                 </div>
             );
         }
@@ -25,11 +25,11 @@ class BrainList extends Component {
             return (
                 <div className='brain-root'>
                     <div className='main-brain'>
-                        <Brain days={days} filled={mainBrainFilled}/>
+                        <Brain animate={true} days={days} filled={mainBrainFilled}/>
                     </div>
                     {
                         fullBrains > 0 && (
-                            <div className="brain-list animate-90">
+                            <div className="brain-list">
                                 <div className="brain-list-header">
                                     Completed Brains : {fullBrains}
                                 </div>
