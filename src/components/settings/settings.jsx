@@ -62,8 +62,6 @@ class Settings extends Component {
         if (!this.props.auth.loggedIn) {
             return <div/>;
         }
-
-        const {user} = this.props.auth;
         const {palette} = this.props;
         const colors = this.state.colors;
 

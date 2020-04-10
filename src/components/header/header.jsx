@@ -25,7 +25,7 @@ class Header extends Component {
     }
 
     render() {
-        const {loggedIn, user} = this.props.auth;
+        const {loggedIn} = this.props.auth;
         return (
             <div className='bootstrap-container header'>
                 <div className='left'>
