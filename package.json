@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.1.1",
     "firebase": "^7.13.2",
-    "immer": "^6.0.3",
+    "immer": "^8.0.1",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
